@@ -550,30 +550,6 @@
                 flex-direction: column;
                 gap: 12px;
             }
-
-            .card-image-horiz {
-                display: flex;
-                gap: 12px;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-                height: auto;
-                position: static;
-                border-radius: var(--radius-lg);
-            }
-            .card-image-horiz::-webkit-scrollbar { display: none; }
-            .card-image-horiz img {
-                position: static;
-                flex: 0 0 85%;
-                height: 260px;
-                object-fit: cover;
-                border-radius: var(--radius-md);
-                opacity: 1;
-                transition: none;
-                scroll-snap-align: start;
-            }
-            .card-image-horiz img.active { opacity: 1; }
         }
     </style>
 </head>
@@ -715,7 +691,7 @@
 
     <script>
         const carousel = document.getElementById('karusel');
-        if (carousel && window.innerWidth > 767) {
+        if (carousel) {
             const imgs = Array.from(carousel.children);
             let current = 0;
             let interval;
